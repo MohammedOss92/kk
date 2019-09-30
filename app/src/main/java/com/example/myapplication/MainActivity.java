@@ -14,7 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Contact> ContactList;
+    private List<Contact> ContactList= new ArrayList<>();;
     private ContactAdapter contactAdapter;
     private Random random;
 
@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         contactAdapter.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore() {
-                if (ContactList.size() <= 20) {
+                if (ContactList.size() <= 10) {
                     ContactList.add(null);
                     contactAdapter.notifyItemInserted(ContactList.size() - 1);
                     new Handler().postDelayed(new Runnable() {
@@ -45,72 +45,182 @@ public class MainActivity extends AppCompatActivity {
 
                             //Generating more data
                             int index = ContactList.size();
-                            int end = index + 10;
-                            for (int i = index; i < end; i++) {
+                            int end = index+1 ;
+                            for (int i = index ; i < end; i++) {
                                 Contact contact = new Contact();
 
-                                ContactList.add(contact);
+//                                ContactList.add(contact);
                             }
                             contactAdapter.notifyDataSetChanged();
                             contactAdapter.setLoaded();
                         }
-                    }, 5000);
+                    }, 3000);
                 } else {
                     Toast.makeText(MainActivity.this, "Loading data completed", Toast.LENGTH_SHORT).show();
                 }  }        });   }
 
     public void prepareContactData() {
-        Contact Contact = new Contact("hj","dfd");
+        Contact Contact = new Contact("A","apple");
         ContactList.add(Contact);
 
-        Contact = new Contact("Inside Out", "Animation");
+        Contact = new Contact("B", "banana");
         ContactList.add(Contact);
 
-        Contact = new Contact("Star Wars: Episode VII - The Force Awakens", "Action");
+        Contact = new Contact("C", "cat");
         ContactList.add(Contact);
 
-        Contact = new Contact("Shaun the Sheep", "Animation");
+        Contact = new Contact("D", "door");
         ContactList.add(Contact);
 
-        Contact = new Contact("The Martian", "Science Fiction & Fantasy");
+        Contact = new Contact("E", "eeeee");
         ContactList.add(Contact);
 
-        Contact = new Contact("Mission: Impossible Rogue Nation", "Action");
+        Contact = new Contact("F", "ffff");
         ContactList.add(Contact);
 
-        Contact = new Contact("Up", "Animation");
+        Contact = new Contact("G", "ggggggg");
         ContactList.add(Contact);
 
-        Contact = new Contact("Star Trek", "Science Fiction");
+        Contact = new Contact("H", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("The LEGO Contact", "Animation");
+        Contact = new Contact("I", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Iron Man", "Action & Adventure");
+        Contact = new Contact("J", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Aliens", "Science Fiction");
+        Contact = new Contact("K", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Chicken Run", "Animation");
+        Contact = new Contact("L", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Back to the Future", "Science Fiction");
+        Contact = new Contact("M", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Raiders of the Lost Ark", "Action & Adventure");
+        Contact = new Contact("N", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Goldfinger", "Action & Adventure");
+        Contact = new Contact("O", "");
         ContactList.add(Contact);
 
-        Contact = new Contact("Guardians of the Galaxy", "Science Fiction & Fantasy");
+        Contact = new Contact("P", "");
         ContactList.add(Contact);
+
+        Contact = new Contact("Q", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("R", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("S", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("T", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("U", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("V", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("W", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("X", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Y", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Z", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Aa","apple");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Bb", "banana");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Cc", "cat");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Dd", "door");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ee", "eeeee");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ff", "ffff");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Gg", "ggggggg");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Hh", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ii", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Jj", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Kk", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ll", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Mm", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Nn", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Oo", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Pp", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Qq", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Rr", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ss", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Tt", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Uu", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Vv", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Ww", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Xx", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Yy", "");
+        ContactList.add(Contact);
+
+        Contact = new Contact("Zz", "");
+        ContactList.add(Contact);
+
+
 
         // notify adapter about data set changes
         // so that it will render the list with new data
-        contactAdapter.notifyDataSetChanged();
+//        contactAdapter.notifyDataSetChanged();
     }
 
 
